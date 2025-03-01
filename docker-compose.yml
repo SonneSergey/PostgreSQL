@@ -1,0 +1,13 @@
+services:
+  postgresql:
+    image: postgres:14-alpine  # Используем образ PostgreSQL версии 14
+    container_name: my_postgres  # Имя контейнера (можно изменить)
+    restart: always  # Автоперезапуск при сбоях
+    ports:
+      - '5432:5432'  # Пробрасываем порт 5432
+    volumes:
+      - ./data:/var/lib/postgresql/data  # Храним данные вне контейнера
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: login
+      POSTGRES_PASSWORD: 9mREsvXDs9Gk89Ef
